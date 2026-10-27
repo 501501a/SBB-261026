@@ -19,9 +19,6 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
-
-	implementation ("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:4.0.0")
-
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
@@ -29,8 +26,14 @@ dependencies {
 	testCompileOnly("org.projectlombok:lombok")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testAnnotationProcessor("org.projectlombok:lombok")
-}
 
+	implementation ("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:4.0.0")
+	runtimeOnly ("com.h2database:h2")
+	implementation("org.springframework.boot:spring-boot-h2console")
+	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation ("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation ("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+}
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
